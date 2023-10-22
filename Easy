@@ -1,0 +1,52 @@
+***** NOTES *****
+Empty array []
+Empty array with zeros []*n
+
+
+1) Dictionaries
+Dictionary is a collection which is ordered and changeable. No duplicate members.
+romans = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000 }
+romans['I'] == 1
+You can add key: value to the existing dictionary. i.e., romans['E'] = 100000
+romans.keys() : will return a view object. The view object contains the keys of the dictionary, as a list.(does not take any parameters)
+romans.values() : will return a view object that displays a list of all values in a given dictionary.(does not take any parameters)
+
+
+
+2) Stack of characters
+A stack is a linear data structure that stores items in a Last-In/First-Out manner. (ust uste dizilmis kitaplar)
+stack = []
+stack.append('a') : adds a at the top of the stack
+stack.append('b')
+stack.append('c')
+# out stack is cba from top to bottom
+stack.pop() --> pops out the item at the top of the stack, that is c here.
+
+
+
+
+
+
+***** QUESTIONS *****
+20) Valid Parentheses
+Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+An input string is valid if:
+Open brackets must be closed by the same type of brackets.
+Open brackets must be closed in the correct order.
+Every close bracket has a corresponding open bracket of the same type.
+
+class Solution:
+    def isValid(self, s: str) -> bool:
+        stack = []
+        mapping = {')':'(','}':'{',']':'['}
+        for char in s:
+            if char in mapping:
+                top_element = stack.pop() if stack else '#'
+                if mapping[char] != top_element:
+                        return False  
+            else:
+                stack.append(char)
+        return not stack
+
+
+

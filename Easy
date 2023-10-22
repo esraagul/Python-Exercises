@@ -2,7 +2,22 @@
 Empty array []
 Empty array with zeros []*n
 
+# init with values (can contain mixed types)
+arr = [1, "eels"]
 
+# get item by index (can be negative to access end of array)
+arr = [1, 2, 3, 4, 5, 6]
+arr[0]  # 1
+arr[-1] # 6
+
+# get length
+length = len(arr)
+
+# supports append and insert
+arr.append(8)
+arr.insert(6, 7)
+
+********************************************************************************************************************************************************************
 1) Dictionaries
 Dictionary is a collection which is ordered and changeable. No duplicate members.
 romans = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000 }
@@ -11,7 +26,7 @@ You can add key: value to the existing dictionary. i.e., romans['E'] = 100000
 romans.keys() : will return a view object. The view object contains the keys of the dictionary, as a list.(does not take any parameters)
 romans.values() : will return a view object that displays a list of all values in a given dictionary.(does not take any parameters)
 
-
+********************************************************************************************************************************************************************
 
 2) Stack of characters
 A stack is a linear data structure that stores items in a Last-In/First-Out manner. (ust uste dizilmis kitaplar)
@@ -21,11 +36,21 @@ stack.append('b')
 stack.append('c')
 # out stack is cba from top to bottom
 stack.pop() --> pops out the item at the top of the stack, that is c here.
+********************************************************************************************************************************************************************
+
+3) Strings
+
+string.count()
+txt = "I love apples, apple are my favorite fruit"
+x = txt.count("apple")
+print(x) ---> 2
 
 
 
 
 
+
+********************************************************************************************************************************************************************
 
 ***** QUESTIONS *****
 20) Valid Parentheses

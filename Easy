@@ -40,6 +40,11 @@ If the key is present in the dictionary, dict.get() returns the corresponding va
 If the key is not found, it returns the default value specified as the second argument.
 
 my_dict.get('a') ---> 1
+
+# if count of the key is higher than 3 then return true
+for value in count.values():
+            if value >= 2:
+                return True
 ********************************************************************************************************************************************************************
 
 2) Stack of characters
@@ -71,6 +76,9 @@ x = x[2::] ---> 100100 (take the part starting with 2nd element including that e
 5) List
 
 6) Set
+
+Sets do not have append function, instead set.add(element) is used.
+
 
 ********************************************************************************************************************************************************************
 
@@ -125,6 +133,18 @@ class Solution:
                     max_profit = prices[i]- min_price
         return max_profit
 
+
+217) Contains Duplicate
+Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        unique_set = set()
+        for num in nums:
+            if num in unique_set:
+                return True
+            unique_set.add(num)
+        return False
 
 
 

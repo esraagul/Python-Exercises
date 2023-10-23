@@ -1,4 +1,21 @@
 ***** NOTES *****
+Python has the following data types built-in by default, in these categories:
+
+Text Type:	str
+Numeric Types:	int, float, complex
+Sequence Types:	list, tuple, range
+Mapping Type:	dict
+Set Types:	            set, frozenset
+Boolean Type:	bool
+Binary Types:	bytes, bytearray, memoryview
+None Type:	            NoneType
+
+Difference between array and list: array can store elements only of the same type but list can store elements of different types.
+list = ['esra', 28]
+array = [22, 28]
+********************************************************************************************************************************************************************
+
+
 Empty array []
 Empty array with zeros []*n
 
@@ -74,10 +91,24 @@ x = x[2::] ---> 100100 (take the part starting with 2nd element including that e
 
 
 5) List
+Lists are used to store multiple items in a single variable.
+
 
 6) Set
-
+Sets in Python are unordered collections of unique elements. 
+By their nature, duplicates aren't allowed. Therefore, converting a list into a set removes the duplicates.
 Sets do not have append function, instead set.add(element) is used.
+
+7) Reversing an array
+one way is to use reversed():
+array = [1, 2, 3, 4, 5]
+reversed_array = list(reversed(array))
+print(reversed_array)  
+
+or build-in function reverse():
+array = [1, 2, 3, 4, 5]
+array.reverse()
+print(array)  
 
 
 ********************************************************************************************************************************************************************

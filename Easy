@@ -26,6 +26,20 @@ You can add key: value to the existing dictionary. i.e., romans['E'] = 100000
 romans.keys() : will return a view object. The view object contains the keys of the dictionary, as a list.(does not take any parameters)
 romans.values() : will return a view object that displays a list of all values in a given dictionary.(does not take any parameters)
 
+# Example dictionary
+my_dict = {'a': 1, 'b': 1, 'c': 3}
+
+# Check if all values are smaller than 2
+all_values_smaller_than_2 = all(value < 2 for value in my_dict.values())
+
+# Print the result
+print(all_values_smaller_than_2)
+
+dict.get(key, default) is a method that allows you to retrieve the value for a given key in a dictionary. 
+If the key is present in the dictionary, dict.get() returns the corresponding value. 
+If the key is not found, it returns the default value specified as the second argument.
+
+my_dict.get('a') ---> 1
 ********************************************************************************************************************************************************************
 
 2) Stack of characters
@@ -46,9 +60,17 @@ x = txt.count("apple")
 print(x) ---> 2
 
 
+4) Bin function
+
+The bin() function returns the binary version of a specified integer. The result will always start with the prefix 0b.
+bin(36) ---> 0b100100
+x = bin(36)
+x = x[2::] ---> 100100 (take the part starting with 2nd element including that element)
 
 
+5) List
 
+6) Set
 
 ********************************************************************************************************************************************************************
 
@@ -72,6 +94,39 @@ class Solution:
             else:
                 stack.append(char)
         return not stack
+
+
+121) Best time to buy and sell stock
+You are given an array prices where prices[i] is the price of a given stock on the ith day.
+You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
+Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
+
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        
+        ''' Brute force, too time consuming.
+        n = len(prices)
+        max_diff = 0
+        for i in range(n):
+            for j in range(i+1,n):
+                diff = prices[j]-prices[i]
+                if diff > max_diff:
+                    max_diff = diff
+        return max_diff
+        '''
+        n = len(prices)
+        min_price = float('inf')
+        max_profit = 0
+        for i in range(n):
+            if prices[i]< min_price:
+                min_price = prices[i]
+            else:
+                if prices[i]- min_price > max_profit:
+                    max_profit = prices[i]- min_price
+        return max_profit
+
+
+
 
 
 

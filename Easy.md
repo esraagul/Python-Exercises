@@ -111,9 +111,9 @@ print(array)
 
 ********************************************************************************************************************************************************************
 
-## QUESTIONS 
+# QUESTIONS 
 
-# 20) Valid Parentheses
+## 20) Valid Parentheses
 Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 An input string is valid if:
 Open brackets must be closed by the same type of brackets.
@@ -135,7 +135,7 @@ class Solution:
         return not stack
 ```
 
-# 121) Best time to buy and sell stock
+## 121) Best time to buy and sell stock
 You are given an array prices where prices[i] is the price of a given stock on the ith day.
 You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
 Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
@@ -166,7 +166,7 @@ class Solution:
         return max_profit
 ```
 
-# 217) Contains Duplicate
+## 217) Contains Duplicate
 Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
 
 ``` python

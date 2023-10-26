@@ -34,6 +34,9 @@ length = len(arr)
 arr.append(8)
 arr.insert(6, 7)
 
+* To refer specific location of these type of arrays: [[1,3],[2,2],[3,1]]
+  arr[i][j]
+  for example: to refer 1 in [1,3], you should say arr[0][0]
 ********************************************************************************************************************************************************************
 ## 1) Dictionaries
 Dictionary is a collection which is ordered and changeable. No duplicate members.
@@ -112,6 +115,9 @@ print(array)
 
 sorted(arr, key=lambda x: (bin(x).count('1'), x)): 
 The sorted function takes the input list arr and sorts its elements based on the key provided by the lambda function. Each element x in arr is transformed using the lambda function to obtain a tuple (bin(x).count('1'), x). The sorting is done based on these tuples, first by the count of '1' bits and then by the actual values of x.
+
+sorted_arr = sorted(boxTypes, key = lambda x: x[1], reverse= True) : descending order 
+
 
 ********************************************************************************************************************************************************************
 

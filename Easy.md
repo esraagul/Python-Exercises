@@ -108,6 +108,10 @@ array = [1, 2, 3, 4, 5]
 array.reverse()
 print(array)  
 
+## 8) Sorted Function
+
+sorted(arr, key=lambda x: (bin(x).count('1'), x)): 
+The sorted function takes the input list arr and sorts its elements based on the key provided by the lambda function. Each element x in arr is transformed using the lambda function to obtain a tuple (bin(x).count('1'), x). The sorting is done based on these tuples, first by the count of '1' bits and then by the actual values of x.
 
 ********************************************************************************************************************************************************************
 

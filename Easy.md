@@ -43,7 +43,7 @@ You can add key: value to the existing dictionary. i.e., romans['E'] = 100000
 romans.keys() : will return a view object. The view object contains the keys of the dictionary, as a list.(does not take any parameters)
 romans.values() : will return a view object that displays a list of all values in a given dictionary.(does not take any parameters)
 
-# Example dictionary
+** Example dictionary **
 my_dict = {'a': 1, 'b': 1, 'c': 3}
 
 Check if all values are smaller than 2
@@ -56,7 +56,7 @@ If the key is not found, it returns the default value specified as the second ar
 
 my_dict.get('a') ---> 1
 
-# if count of the key is higher than 3 then return true
+if count of the key is higher than 3 then return true
 for value in count.values():
             if value >= 2:
                 return True

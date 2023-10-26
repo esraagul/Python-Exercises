@@ -1,4 +1,4 @@
-***** NOTES *****
+# NOTES 
 Python has the following data types built-in by default, in these categories:
 
 Text Type:	str
@@ -19,23 +19,23 @@ array = [22, 28]
 Empty array []
 Empty array with zeros []*n
 
-# init with values (can contain mixed types)
+* init with values (can contain mixed types)
 arr = [1, "eels"]
 
-# get item by index (can be negative to access end of array)
+* get item by index (can be negative to access end of array)
 arr = [1, 2, 3, 4, 5, 6]
 arr[0]  # 1
 arr[-1] # 6
 
-# get length
+* get length
 length = len(arr)
 
-# supports append and insert
+* supports append and insert
 arr.append(8)
 arr.insert(6, 7)
 
 ********************************************************************************************************************************************************************
-1) Dictionaries
+## 1) Dictionaries
 Dictionary is a collection which is ordered and changeable. No duplicate members.
 romans = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000 }
 romans['I'] == 1
@@ -46,11 +46,9 @@ romans.values() : will return a view object that displays a list of all values i
 # Example dictionary
 my_dict = {'a': 1, 'b': 1, 'c': 3}
 
-# Check if all values are smaller than 2
+Check if all values are smaller than 2
 all_values_smaller_than_2 = all(value < 2 for value in my_dict.values())
 
-# Print the result
-print(all_values_smaller_than_2)
 
 dict.get(key, default) is a method that allows you to retrieve the value for a given key in a dictionary. 
 If the key is present in the dictionary, dict.get() returns the corresponding value. 
@@ -64,17 +62,17 @@ for value in count.values():
                 return True
 ********************************************************************************************************************************************************************
 
-2) Stack of characters
+## 2) Stack of characters
 A stack is a linear data structure that stores items in a Last-In/First-Out manner. (ust uste dizilmis kitaplar)
 stack = []
 stack.append('a') : adds a at the top of the stack
 stack.append('b')
 stack.append('c')
-# out stack is cba from top to bottom
+* out stack is cba from top to bottom
 stack.pop() --> pops out the item at the top of the stack, that is c here.
 ********************************************************************************************************************************************************************
 
-3) Strings
+## 3) Strings
 
 string.count()
 txt = "I love apples, apple are my favorite fruit"
@@ -82,7 +80,7 @@ x = txt.count("apple")
 print(x) ---> 2
 
 
-4) Bin function
+## 4) Bin function
 
 The bin() function returns the binary version of a specified integer. The result will always start with the prefix 0b.
 bin(36) ---> 0b100100
@@ -90,16 +88,16 @@ x = bin(36)
 x = x[2::] ---> 100100 (take the part starting with 2nd element including that element)
 
 
-5) List
+## 5) List
 Lists are used to store multiple items in a single variable.
 
 
-6) Set
+## 6) Set
 Sets in Python are unordered collections of unique elements. 
 By their nature, duplicates aren't allowed. Therefore, converting a list into a set removes the duplicates.
 Sets do not have append function, instead set.add(element) is used.
 
-7) Reversing an array
+## 7) Reversing an array
 one way is to use reversed():
 array = [1, 2, 3, 4, 5]
 reversed_array = list(reversed(array))
@@ -113,14 +111,16 @@ print(array)
 
 ********************************************************************************************************************************************************************
 
-***** QUESTIONS *****
-20) Valid Parentheses
+## QUESTIONS 
+
+# 20) Valid Parentheses
 Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 An input string is valid if:
 Open brackets must be closed by the same type of brackets.
 Open brackets must be closed in the correct order.
 Every close bracket has a corresponding open bracket of the same type.
 
+``` python
 class Solution:
     def isValid(self, s: str) -> bool:
         stack = []
@@ -133,13 +133,14 @@ class Solution:
             else:
                 stack.append(char)
         return not stack
+```
 
-
-121) Best time to buy and sell stock
+# 121) Best time to buy and sell stock
 You are given an array prices where prices[i] is the price of a given stock on the ith day.
 You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
 Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
 
+``` python
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         
@@ -163,11 +164,12 @@ class Solution:
                 if prices[i]- min_price > max_profit:
                     max_profit = prices[i]- min_price
         return max_profit
+```
 
-
-217) Contains Duplicate
+# 217) Contains Duplicate
 Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
 
+``` python
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
         unique_set = set()
@@ -177,7 +179,7 @@ class Solution:
             unique_set.add(num)
         return False
 
-
+```
 
 
 

@@ -2,6 +2,7 @@ An Anagram is a word or phrase formed by rearranging the letters of a different 
 For example, "dacb" is an anagram of "abdc".
 
 **SORTED** 
+
 a = ("h", "h", "a", "c", "f", "d", "e", "g")
 x = sorted(a) ---> ['a', 'c', 'd', 'e', 'f', 'g', 'h', 'h']
 x = sorted(a, reverse=True) ---> ['h', 'h', 'g', 'f', 'e', 'd', 'c', 'a']

@@ -22,7 +22,7 @@ Output: ["abba","cd"]
 Input: words = ["a","b","c","d","e"]
 Output: ["a","b","c","d","e"]
 
-
+```
 class Solution:
     def removeAnagrams(self, words: List[str]) -> List[str]:
         i = 1
@@ -37,3 +37,4 @@ class Solution:
                 
         
         return words
+```

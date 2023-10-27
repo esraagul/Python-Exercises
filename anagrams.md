@@ -1,16 +1,18 @@
 An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase using all the original letters exactly once. 
 For example, "dacb" is an anagram of "abdc".
 
-**SORTED** 
+**`SORTED`** 
 
 a = ("h", "h", "a", "c", "f", "d", "e", "g")
+
 x = sorted(a) ---> ['a', 'c', 'd', 'e', 'f', 'g', 'h', 'h']
+
 x = sorted(a, reverse=True) ---> ['h', 'h', 'g', 'f', 'e', 'd', 'c', 'a']
 
 
 
-*
-2273. Find resultant array after removing anagrams
+**2273. Find resultant array after removing anagrams**
+
 You are given a 0-indexed string array words, where words[i] consists of lowercase English letters.
 In one operation, select any index i such that 0 < i < words.length and words[i - 1] and words[i] are anagrams, and delete words[i] from words. 
 Keep performing this operation as long as you can select an index that satisfies the conditions.

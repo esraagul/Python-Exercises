@@ -13,15 +13,6 @@ Python has the following data types built-in by default, in these categories:
 | **None Type**   | NoneType.                         |
 
 
-Text Type:	str
-Numeric Types:	int, float, complex
-Sequence Types:	list, tuple, range
-Mapping Type:	dict
-Set Types:	            set, frozenset
-Boolean Type:	bool
-Binary Types:	bytes, bytearray, memoryview
-None Type:	            NoneType
-
 Difference between array and list: array can store elements only of the same type but list can store elements of different types.
 list = ['esra', 28]
 array = [22, 28]

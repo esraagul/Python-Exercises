@@ -1,4 +1,5 @@
 # NOTES 
+## Data Structures
 Python has the following data types built-in by default, in these categories:
 
 | **Category**    | **Types**                        |
@@ -12,43 +13,50 @@ Python has the following data types built-in by default, in these categories:
 | **Binary Types**| bytes, bytearray, memoryview      |
 | **None Type**   | NoneType.                         |
 
-*[Note: This is an inline comment in Markdown.]*
-Difference between array and list: array can store elements only of the same type but list can store elements of different types.
-list = ['esra', 28]
-array = [22, 28]
-********************************************************************************************************************************************************************
+## 1) Array
+
+* **Empty Array:** `[]`
+
+* **Empty Array with Zeros:** `[]*n`
+
+* **Initialization with Values (Mixed Types):**  
+  ```python
+  arr = [1, "eels"]
+  ```
+* **Accessing Items by Index (Negative Indexing for End of Array):**  
+  ```python
+  arr = [1, 2, 3, 4, 5, 6]
+  arr[0]  # 1
+  arr[-1] # 6
+  ```
+* **Supports Append and Insert Operations:**  
+  ```python
+  arr.append(8)    # appends 8 at the end of the array
+  arr.insert(6, 7) # Inserts 7 at index 6 
+  ```
+* **Accessing Specific Locations in 2D Arrays:**
+  ```python
+  arr = [[1, 3], [2, 2], [3, 1]]
+  value = arr[i][j]  # Accessing element at row i, column j
+  arr[0][0] # To refer to 1 in [1, 3], you should use arr[0][0].
+  ```
 
 
-Empty array []
-Empty array with zeros []*n
+## 2) Dictionaries
+A dictionary is a collection in Python that is ordered and changeable, and it does not allow duplicate members.
 
-* init with values (can contain mixed types)
-arr = [1, "eels"]
+### Example:
 
-* get item by index (can be negative to access end of array)
-arr = [1, 2, 3, 4, 5, 6]
-arr[0]  # 1
-arr[-1] # 6
-
-* get length
-length = len(arr)
-
-* supports append and insert
-arr.append(8)
-arr.insert(6, 7)
-
-* To refer specific location of these type of arrays: [[1,3],[2,2],[3,1]]
-  arr[i][j]
-  for example: to refer 1 in [1,3], you should say arr[0][0]
-********************************************************************************************************************************************************************
-## 1) Dictionaries
-Dictionary is a collection which is ordered and changeable. No duplicate members.
-romans = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000 }
+```python
+romans = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
 romans['I'] == 1
-You can add key: value to the existing dictionary. i.e., romans['E'] = 100000
-romans.keys() : will return a view object. The view object contains the keys of the dictionary, as a list.(does not take any parameters)
-romans.values() : will return a view object that displays a list of all values in a given dictionary.(does not take any parameters)
 
+# Adding a new key-value pair to the dictionary
+romans['E'] = 100000
+
+# Getting keys and values from the dictionary
+romans.keys()   # Returns a view object containing the keys of the dictionary as a list
+romans.values() # Returns a view object displaying a list of all values in the dictionary
 
 my_dict = {'a': 1, 'b': 1, 'c': 3}
 
@@ -66,65 +74,103 @@ if count of the key is higher than 3 then return true
 for value in count.values():
             if value >= 2:
                 return True
-********************************************************************************************************************************************************************
+```
 
-## 2) Stack of characters
-A stack is a linear data structure that stores items in a Last-In/First-Out manner. (ust uste dizilmis kitaplar)
+## 3) Stack of characters
+
+A stack is a linear data structure that stores items in a Last-In/First-Out manner, like books stacked on top of each other.
+
+```python
 stack = []
-stack.append('a') : adds a at the top of the stack
+stack.append('a')  # Adds 'a' at the top of the stack
 stack.append('b')
 stack.append('c')
-* out stack is cba from top to bottom
-stack.pop() --> pops out the item at the top of the stack, that is c here.
-********************************************************************************************************************************************************************
+# The stack is 'cba' from top to bottom
+stack.pop()  # Pops out the item at the top of the stack, which is 'c' here.
+```
 
-## 3) Strings
+## 4) Strings
 
-string.count()
+* `string.count():`  You can use the `count()` method in Python to count occurrences of a substring within a string.
+```python
 txt = "I love apples, apple are my favorite fruit"
 x = txt.count("apple")
-print(x) ---> 2
+print(x) # 2
+```
 
+## 5) `bin()` Function
 
-## 4) Bin function
+The `bin()` function returns the binary version of a specified integer. The result will always start with the prefix `0b`.
 
-The bin() function returns the binary version of a specified integer. The result will always start with the prefix 0b.
-bin(36) ---> 0b100100
+```python
+bin(36)  # Outputs: 0b100100
+
+# Store the binary representation in a variable
 x = bin(36)
-x = x[2::] ---> 100100 (take the part starting with 2nd element including that element)
+x = x[2::]  # Extract the binary part starting from the 2nd element onwards: 100100
 
+```
 
-## 5) List
+## 6) Lists
+
 Lists are used to store multiple items in a single variable.
 
+**Difference between Array and List:**
 
-## 6) Set
-Sets in Python are unordered collections of unique elements. 
+Arrays can store elements only of the same type, whereas lists can store elements of different types.
+
+**Example:**
+
+```python
+# List with different types of elements
+my_list = ['esra', 28]
+
+# Array with elements of the same type
+my_array = [22, 28]
+
+```
+
+## 7) Set
+Sets in Python are unordered collections of unique elements.
+
 By their nature, duplicates aren't allowed. Therefore, converting a list into a set removes the duplicates.
-Sets do not have append function, instead set.add(element) is used.
 
-## 7) Reversing an array
-one way is to use reversed():
+Sets do not have append function, instead `set.add(element)` is used.  
+
+## 8) Reversing an array
+one way is to use `reversed()`:
+``` python
 array = [1, 2, 3, 4, 5]
 reversed_array = list(reversed(array))
 print(reversed_array)  
-
-or build-in function reverse():
+```
+or build-in function `reverse()`:
+```python
 array = [1, 2, 3, 4, 5]
 array.reverse()
 print(array)  
+```
+## 9) `sorted()` Function
 
-## 8) Sorted Function
+The `sorted()` function in Python is used to sort a sequence (such as a list) and return a new sorted list from the elements of any iterable. It takes an optional `key` argument, which can be a function or lambda expression used for custom sorting logic.
 
-sorted(arr, key=lambda x: (bin(x).count('1'), x)): 
-The sorted function takes the input list arr and sorts its elements based on the key provided by the lambda function. Each element x in arr is transformed using the lambda function to obtain a tuple (bin(x).count('1'), x). The sorting is done based on these tuples, first by the count of '1' bits and then by the actual values of x.
+### Example 1:
 
+```python
+sorted(arr, key=lambda x: (bin(x).count('1'), x))
+```
+The `sorted()` function takes the input list arr and sorts its elements based on the key provided by the lambda function. Each element `x` in arr is transformed using the lambda function to obtain a tuple `(bin(x).count('1'), x)`. The sorting is done based on these tuples, first by the count of '1' bits and then by the actual values of x.
+
+### Example 2:
+
+```python
 sorted_arr = sorted(boxTypes, key = lambda x: x[1], reverse= True) : descending order 
-
-
+```
+In this example, sorted_arr is sorted based on the second element of each tuple in boxTypes in descending order (reverse=True), demonstrating how the key argument can be used to customize sorting behavior.
 ********************************************************************************************************************************************************************
 
 # QUESTIONS 
+These are the questions from leetcode.
 
 ## 20) Valid Parentheses
 Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.

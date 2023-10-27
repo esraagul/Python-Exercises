@@ -12,7 +12,7 @@ Python has the following data types built-in by default, in these categories:
 | **Binary Types**| bytes, bytearray, memoryview      |
 | **None Type**   | NoneType.                         |
 
-
+*[Note: This is an inline comment in Markdown.]*
 Difference between array and list: array can store elements only of the same type but list can store elements of different types.
 list = ['esra', 28]
 array = [22, 28]

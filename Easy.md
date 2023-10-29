@@ -44,6 +44,7 @@ Python has the following data types built-in by default, in these categories:
 
 ## 2) Dictionaries
 A dictionary is a collection in Python that is ordered and changeable, and it does not allow duplicate members.
+* **`Counter()` from collections**
 
 ### Example:
 
@@ -240,5 +241,31 @@ class Solution:
 
 ```
 
+## 1481) Least Number of Unique Integers after K Removals(medium)
 
+Given an array of integers arr and an integer k. Find the least number of unique integers after removing exactly k elements.
 
+Hint: An optimal strategy is to remove the numbers with the smallest count first.
+
+This way is time complex since arr.count(a) iterates through all elements of arr, the overall time complexity of your code becomes O(n^2):
+
+``` python
+class Solution:
+    def findLeastNumOfUniqueInts(self, arr: List[int], k: int) -> int:
+        counts = {}
+        for a in arr:
+            counts[a] = arr.count(a)
+        sorted_arr = sorted(arr, key = lambda x:(counts[x],x))
+        return len(set(sorted_arr[k:]))
+```
+
+better approach is to use `Counter(arr)` from collections
+
+```python
+from collections import Counter
+class Solution:
+    def findLeastNumOfUniqueInts(self, arr: List[int], k: int) -> int:
+        counts = Counter(arr)
+        sorted_arr = sorted(arr, key = lambda x:(counts[x],x))
+        return len(set(sorted_arr[k:]))
+```

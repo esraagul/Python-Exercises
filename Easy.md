@@ -40,8 +40,18 @@ Python has the following data types built-in by default, in these categories:
   value = arr[i][j]  # Accessing element at row i, column j
   arr[0][0] # To refer to 1 in [1, 3], you should use arr[0][0].
   ```
-
-
+* **Generating a list of integers for given n**
+  ```python
+  #input: n = 3
+  #output: [0,1,2]
+  arr = [i for i in range(n)]
+  #input: n = 3
+  #output: [1,2,3]
+  arr = [i+1 for i in range(n)]
+  #input: n = 3
+  #output: ["1","2","3"]
+  arr = [str(i+1) for i in range(n)]
+  ```
 ## 2) Dictionaries
 A dictionary is a collection in Python that is ordered and changeable, and it does not allow duplicate members.
 * **`Counter()` from collections**

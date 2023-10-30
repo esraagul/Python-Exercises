@@ -56,6 +56,8 @@ Input: target = "00000"
 Output: 0
 Explanation: We do not need any operations since the initial s already equals target.
 
+Code with high time complexity:
+
 ```python
 class Solution:
     def minFlips(self, target: str) -> int:
@@ -69,6 +71,8 @@ class Solution:
         return counts
 
 ```
+
+instead of comparing entire strings and performing operations, the code iterates through the target string. For each bit in the target, it compares it with the current bit. If they are different, it performs a flip operation by toggling the current bit. This approach avoids unnecessary string operations and should be more efficient.
 
 ```python
 def minFlips(target):

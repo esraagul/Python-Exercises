@@ -140,7 +140,20 @@ my_list = ['esra', 28]
 my_array = [22, 28]
 
 ```
+* **`index()`**
 
+List.index() returns the index of the specified element in the list.
+```python
+animals = ['cat', 'dog', 'rabbit', 'horse']
+
+# get the index of 'dog'
+index = animals.index('dog')
+
+
+print(index)
+
+# Output: 1
+```
 ## 7) Set
 Sets in Python are unordered collections of unique elements.
 

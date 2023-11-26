@@ -191,6 +191,26 @@ The `sorted()` function takes the input list arr and sorts its elements based on
 sorted_arr = sorted(boxTypes, key = lambda x: x[1], reverse= True) : descending order 
 ```
 In this example, sorted_arr is sorted based on the second element of each tuple in boxTypes in descending order (reverse=True), demonstrating how the key argument can be used to customize sorting behavior.
+
+## 5) `range` Function
+
+The range() function in Python is a built-in function used to generate a sequence of numbers. It is often used in for loops to iterate over a sequence of numbers.
+
+The basic syntax of the range() function is as follows: range(start_val, stop_val, step)
+
+```python
+for i in range(1, 10, 2):
+    print(i)
+# output: 1
+#         3
+#         5
+#         7
+#         9
+
+```
+
+
+
 ********************************************************************************************************************************************************************
 
 # QUESTIONS 

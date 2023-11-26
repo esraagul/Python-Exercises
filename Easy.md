@@ -120,6 +120,7 @@ bin(36)  # Outputs: 0b100100
 x = bin(36)
 x = x[2::]  # Extract the binary part starting from the 2nd element onwards: 100100
 
+
 ```
 
 ## 6) Lists
@@ -197,6 +198,10 @@ In this example, sorted_arr is sorted based on the second element of each tuple 
 The range() function in Python is a built-in function used to generate a sequence of numbers. It is often used in for loops to iterate over a sequence of numbers.
 
 The basic syntax of the range() function is as follows: range(start_val, stop_val, step)
+
+    start (optional): The starting value of the sequence. If omitted, it defaults to 0.  
+    stop: The end value of the sequence (exclusive). The range() function generates numbers up to, but not including, this value.  
+    step (optional): The step or the difference between each number in the sequence. If omitted, it defaults to 1.  
 
 ```python
 for i in range(1, 10, 2):

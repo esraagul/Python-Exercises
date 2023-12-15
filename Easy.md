@@ -230,6 +230,11 @@ squared_numbers_iterator = map(square, numbers)
 
 map(str, digits): Converts each digit in the list to a string.
 
+## 12) `int()` function
+Python int() function returns an integer from a given object or converts a number in a given base to a decimal.
+
+int('0b110', 2): convert binary string to its decimal equivalent.(input should be string!!)
+
 
 
 
@@ -439,6 +444,26 @@ class Solution:
         
         return result
 ```
+## 14) Longest Common Prefix
+
+Write a function to find the longest common prefix string amongst an array of strings.
+
+If there is no common prefix, return an empty string "".
+
+Example 1:
+
+Input: strs = ["flower","flow","flight"]  
+Output: "fl"  
+
+Example 2:
+
+Input: strs = ["dog","racecar","car"]  
+Output: ""  
+Explanation: There is no common prefix among the input strings.  
+
+Solution : https://medium.com/@d_dchris/10-methods-to-solve-the-longest-common-prefix-problem-using-python-leetcode-14-a87bb3eb0f3a
+
+
 
 
 

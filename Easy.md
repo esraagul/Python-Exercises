@@ -193,7 +193,7 @@ sorted_arr = sorted(boxTypes, key = lambda x: x[1], reverse= True) : descending 
 ```
 In this example, sorted_arr is sorted based on the second element of each tuple in boxTypes in descending order (reverse=True), demonstrating how the key argument can be used to customize sorting behavior.
 
-## 5) `range` Function
+## 10) `range` Function
 
 The range() function in Python is a built-in function used to generate a sequence of numbers. It is often used in for loops to iterate over a sequence of numbers.
 
@@ -214,6 +214,14 @@ for i in range(1, 10, 2):
 
 ```
 
+## 11) `map()` Function
+
+The `map()` function applies a given function to each element of an iterable (list, tuple etc.) and returns an iterator containing the results.
+
+# apply square() to each item of the numbers list
+squared_numbers_iterator = map(square, numbers)
+
+map(str, digits): Converts each digit in the list to a string.
 
 
 ********************************************************************************************************************************************************************

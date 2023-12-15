@@ -109,6 +109,13 @@ x = txt.count("apple")
 print(x) # 2
 ```
 
+### Methods:
+
+* 1) join:  The join() method takes all items in an iterable and joins them into one string. A string must be specified as the separator.
+     "".join(...): Joins the strings into a single string.
+     
+
+
 ## 5) `bin()` Function
 
 The `bin()` function returns the binary version of a specified integer. The result will always start with the prefix `0b`.
@@ -218,10 +225,12 @@ for i in range(1, 10, 2):
 
 The `map()` function applies a given function to each element of an iterable (list, tuple etc.) and returns an iterator containing the results.
 
-# apply square() to each item of the numbers list
+apply square() to each item of the numbers list:  
 squared_numbers_iterator = map(square, numbers)
 
 map(str, digits): Converts each digit in the list to a string.
+
+
 
 
 ********************************************************************************************************************************************************************

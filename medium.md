@@ -173,3 +173,54 @@ class Solution:
 note: self.countAndSay(n - 1) is recursive way of calling the function
 
 self: In Python, self is a reference to the instance of the class. When a method is called on an instance of a class, self is used to refer to that instance
+
+
+
+
+## 3) Longest Substring Without Repeating Characters
+
+Given a string s, find the length of the longest substring without repeating characters.
+
+
+Example 1:
+
+Input: s = "abcabcbb"  
+Output: 3  
+Explanation: The answer is "abc", with the length of 3.  
+
+Example 2:
+
+Input: s = "bbbbb"  
+Output: 1  
+Explanation: The answer is "b", with the length of 1.  
+
+Example 3:
+
+Input: s = "pwwkew"  
+Output: 3  
+Explanation: The answer is "wke", with the length of 3.  
+Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.  
+
+My solution:
+```python
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        ans = []
+        max_length = 0
+
+        for i in s:
+            if i not in ans:
+                ans.append(i)
+                max_length = max(max_length, len(ans))
+            else:
+                ans = ans[ans.index(i) + 1:] + [i]
+
+        return max_length
+```
+
+Sliding window technique:
+
+
+
+
+

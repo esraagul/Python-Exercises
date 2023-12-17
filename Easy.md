@@ -235,7 +235,8 @@ Python int() function returns an integer from a given object or converts a numbe
 
 int('0b110', 2): convert binary string to its decimal equivalent.(input should be string!!)
 
-
+## 13) `Counter`
+Counter() creates an instance of the Counter class from the collections module in Python. The Counter class is a subclass of the built-in dict class and is specifically designed for counting hashable objects.
 
 
 ********************************************************************************************************************************************************************

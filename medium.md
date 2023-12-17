@@ -201,7 +201,7 @@ Output: 3
 Explanation: The answer is "wke", with the length of 3.  
 Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.  
 
-My solution:
+My solution: O(n)
 ```python
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
@@ -218,9 +218,37 @@ class Solution:
         return max_length
 ```
 
-Sliding window technique:
+Sliding window technique: O(n)
 
+A sliding window is an abstract concept commonly used in array/string problems. A window is a range of elements in the array/string which usually defined by the start and end indices, i.e. [i,j)[i, j)[i,j) (left-closed, right-open). A sliding window is a window "slides" its two boundaries to the certain direction. For example, if we slide [i,j)[i, j)[i,j) to the right by 111 element, then it becomes [i+1,j+1)[i+1, j+1)[i+1,j+1) (left-closed, right-open).   
 
+Intuition
 
+Given a substring with a fixed end index in the string, maintain a HashMap(dictionary) to record the frequency of each character in the current substring. If any character occurs more than once, drop the leftmost characters until there are no duplicate characters.
 
+```python
+from collections import Counter
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        chars = Counter()
 
+        left = right = 0
+
+        res = 0
+        while right < len(s):
+            r = s[right]
+            chars[r] += 1
+
+            while chars[r] > 1:
+                l = s[left]
+                chars[l] -= 1
+                left += 1
+
+            res = max(res, right - left + 1)
+
+            right += 1
+        return res
+
+```
+
+Sliding Window Optimized : O(n)

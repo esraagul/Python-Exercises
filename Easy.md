@@ -113,8 +113,13 @@ print(x) # 2
 
 * 1) join:  The join() method takes all items in an iterable and joins them into one string. A string must be specified as the separator.
      "".join(...): Joins the strings into a single string.
-     
-
+* 2) find : str.find() returns the lowest index in the string where the substring sub is found within the slice s[start:end]. It returns -1 if the sub is not found.
+     start and end are optional arguments
+     ```python
+     s1="banana"
+     print (s1.find("an"))
+     #Output:1
+     ```
 
 ## 5) `bin()` Function
 

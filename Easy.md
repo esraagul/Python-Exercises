@@ -486,9 +486,24 @@ Example 2:
 Input: numRows = 1  
 Output: [[1]]  
 
-```python
 
+Dynamic Programming:
+```python
+class Solution:
+    def generate(self, numRows: int) -> List[List[int]]:
+        triangle = []
+        for row_num in range(numRows):
+            row = [None for _ in range(row_num+1)]
+            row[0] = 1
+            row[-1] = 1
+            for j in range(1,len(row)-1):
+                row[j] = triangle[row_num-1][j-1]+triangle[row_num-1][j]
+            triangle.append(row)
+        return triangle
 ```
+here row = [None for _ in range(row_num + 1)] is creating a row with (row_num + 1) many elements where each element set as None.
+
+
 
 ## 35) Search Insert Position
 Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.

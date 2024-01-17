@@ -191,6 +191,8 @@ class Solution:
         result = []
         for a,b in zip(w1,w2):
             result += [a, b]
+            # or just use result.append(a)
+            #             result.append(b)
         
         
         return result

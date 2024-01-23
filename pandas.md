@@ -28,3 +28,26 @@ Pandas provides a comprehensive suite of functions for data transformation and a
 ### Time Series Analysis and Visualization
 
 Pandas is especially suited for working with time series data, which is common in quantitative trading. The library provides various functions and tools for handling, analyzing, and visualizing time series data, such as date_range, resample, and rolling. These tools enable traders to create custom date ranges, resample data at different frequencies, and calculate rolling statistics, such as moving averages or standard deviations. Additionally, pandas integrates seamlessly with matplotlib, allowing traders to create various types of plots and visualizations for their financial data. For example, a trader can use pandas to calculate the 30-day moving average of a stock’s closing price and plot it alongside the actual closing prices using matplotlib.
+
+
+## DataFrames
+
+A Pandas DataFrame is a 2 dimensional data structure, like a 2 dimensional array, or a table with rows and columns.
+
+Create a simple dataframe:
+
+```python
+
+import pandas as pd
+data = {
+  'names' : ['Esra', 'Chava'],
+  'ages'  : [28, 27]
+}
+
+#load data into a DataFrame object:
+df = pd.DataFrame(data)
+print(df)
+```
+
+
+

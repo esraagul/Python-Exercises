@@ -125,3 +125,95 @@ observe that the iteration in the else part is necessary because there might be 
 
 For example,  
 nums = [-1,0,1,2,-1,-4] then the answer is [[-1,-1,2],[-1,0,1]].
+
+use TwoSumII as separate function:
+```python3
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        res = []
+        nums.sort()
+        for i in range(len(nums)):
+            if nums[i]>0:
+                break
+            if i==0 or nums[i]!=nums[i-1]:
+                self.twoSumII(nums,i,res)
+        return res
+
+    def twoSumII(self, nums: List[int], i: int, res: List[List[int]]):
+        l = i+1
+        r = len(nums)-1
+        while l<r:
+            sum = nums[i]+nums[l]+nums[r]
+            if sum>0:
+                r-=1
+            elif sum<0:
+                l+=1
+            else:
+                res.append([nums[i], nums[l], nums[r]])
+                l+=1
+                while l<r and nums[l]==nums[l-1]:
+                    l+=1
+```
+
+
+without using sorting:
+```python3
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        res = set()
+        dups = set()
+        seen = {}
+        for index1, val1 in enumerate(nums):
+            if val1 not in dups:
+                dups.add(val1)
+                for index2, val2 in enumerate(nums[index1+1:]):
+                    complement = -val1-val2
+                    if complement in seen and seen[complement]==index1:
+                        res.add(tuple(sorted((val1,val2,complement))))  #set() takes tuples(i.e.()). tuple converts sorted(tuple) into tuple.
+                    seen[val2] = index1  # This ensures that val2 is associated with the last index of the outer loop when it is encountered in the inner loop.
+        return res
+
+
+## 3Sum Smaller
+
+Given an array of n integers nums and an integer target, find the number of index triplets i, j, k with 0 <= i < j < k < n that satisfy the condition nums[i] + nums[j] + nums[k] < target.
+
+Example 1:
+
+Input: nums = [-2,0,1,3], target = 2  
+Output: 2  
+Explanation: Because there are two triplets which sums are less than 2:  
+[-2,0,1]   
+[-2,0,3]  
+Example 2:  
+
+Input: nums = [], target = 0  
+Output: 0  
+Example 3:  
+
+Input: nums = [0], target = 0  
+Output: 0
+
+example: nums=[3,1,0,-2], target=4
+output: 3
+
+```python3
+class Solution:
+    def threeSumSmaller(self, nums: List[int], target: int) -> int:
+        counter = 0
+        nums.sort()
+        for index, val in enumerate(nums):
+            l = index+1
+            r = len(nums)-1
+            while l<r:
+                threeSum = val+nums[l]+nums[r]
+                if threeSum<target:
+                    counter+=r-l # All pairs (nums[index], nums[l], nums[k]) are valid for l < k < r
+                    l+=1
+                else:
+                    r-=1
+        return counter
+
+```
+
+

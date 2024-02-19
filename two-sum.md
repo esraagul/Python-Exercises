@@ -180,7 +180,7 @@ class Solution:
                     seen[val2] = index1  # This ensures that val2 is associated with the last index of the outer loop when it is encountered in the inner loop.
         return res
 
-
+```
 ## 3Sum Smaller <a name="3sum-smaller"></a>
 
 Given an array of n integers nums and an integer target, find the number of index triplets i, j, k with 0 <= i < j < k < n that satisfy the condition nums[i] + nums[j] + nums[k] < target.

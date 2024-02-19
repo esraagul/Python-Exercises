@@ -168,6 +168,20 @@ class Solution:
             result = pairs_to_string(digit_freq)
             
             return result
+
+
+### Another way of writing digits_freq function:
+def digits_freq(number):
+            digit_freq = []
+            count = 1
+            for i in range(1, len(number)):
+                if number[i]==number[i-1]:
+                    count+=1
+                else:
+                    digit_freq.append([number[i-1], count])
+                    count = 1
+            digit_freq.append([number[-1], count])  # Handle the last digit
+            return digit_freq
 ```
 
 note: self.countAndSay(n - 1) is recursive way of calling the function

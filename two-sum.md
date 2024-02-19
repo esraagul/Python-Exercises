@@ -1,4 +1,11 @@
-## Two Sum
+## Table of Contents
+1. [Two Sum](#two-sum)
+2. [Two Sum II - Input Array is Sorted](#two-sum-ii-input-array-is-sorted)
+3. [3Sum](#3sum)
+4. [3Sum Smaller](#3sum-smaller)
+5. [3Sum Closest](#3sum-closest)
+
+## Two Sum <a name="two-sum"></a>
 
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.
 
@@ -27,7 +34,7 @@ class Solution:
             dictionary[nums[i]] = i
 ```
 
-## Two Sum II-input array is sorted
+## Two Sum II - Input Array is Sorted <a name="two-sum-ii-input-array-is-sorted"></a>
 
 Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number. Let these two numbers be numbers[index1] and numbers[index2] where 1 <= index1 < index2 <= numbers.length. Return the indices of the two numbers, index1 and index2, added by one as an integer array [index1, index2] of length 2. The tests are generated such that there is exactly one solution. You may not use the same element twice. Your solution must use only constant extra space.
 
@@ -66,7 +73,7 @@ class Solution:
         
 ```
 
-## 3Sum
+## 3Sum <a name="3sum"></a>
 
 Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
 
@@ -126,7 +133,7 @@ observe that the iteration in the else part is necessary because there might be 
 For example,  
 nums = [-1,0,1,2,-1,-4] then the answer is [[-1,-1,2],[-1,0,1]].
 
-use TwoSumII as separate function:
+**use TwoSumII as separate function:**
 ```python3
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
@@ -156,7 +163,7 @@ class Solution:
 ```
 
 
-without using sorting:
+**without using sorting:**
 ```python3
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
@@ -174,7 +181,7 @@ class Solution:
         return res
 
 
-## 3Sum Smaller
+## 3Sum Smaller <a name="3sum-smaller"></a>
 
 Given an array of n integers nums and an integer target, find the number of index triplets i, j, k with 0 <= i < j < k < n that satisfy the condition nums[i] + nums[j] + nums[k] < target.
 
@@ -216,7 +223,7 @@ class Solution:
 
 ```
 
-## 3Sum Closest
+## 3Sum Closest <a name="3sum-closest"></a>
 
 Given an integer array nums of length n and an integer target, find three integers in nums such that the sum is closest to target.
 
@@ -237,7 +244,7 @@ Input: nums = [0,0,0], target = 1
 Output: 0   
 Explanation: The sum that is closest to the target is 0. (0 + 0 + 0 = 0).  
 
-** Two pointers
+**Two pointers:**
 
 ```python3
 class Solution:

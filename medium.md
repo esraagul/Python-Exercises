@@ -1,4 +1,16 @@
-2038. Remove colored pieces if both neighbors are the same color:
+## Table of Contents
+1. [2038. Remove colored pieces if both neighbors are the same color](#2038)
+2. [1529. Minimum Suffix Flips](#1529)
+3. [38. Count and Say](#38)
+4. [3.Longest Substring Without Repeating Characters](#3)
+5. [56. Merge Intervals](#56)
+6. [2610. Convert an array into 2D array with conditions](#2610)
+
+
+
+
+
+### 2038. Remove colored pieces if both neighbors are the same color <a name="2038"></a>
 ```python
 class Solution:
     def winnerOfGame(self, colors: str) -> bool:
@@ -23,7 +35,7 @@ class Solution:
             elif 'B'==i==ii==iii:b+=1
         return b<a
 ```
-1529. Minimum Suffix Flips:
+### 1529. Minimum Suffix Flips <a name="1529"></a>
       
 You are given a 0-indexed binary string target of length n. You have another binary string s of length n that is initially set to all zeros. You want to make s equal to target.
 
@@ -91,7 +103,7 @@ def minFlips(target):
 
 
 
-## 38. Count and Say
+### 38. Count and Say <a name="38"></a>
 The count-and-say sequence is a sequence of digit strings defined by the recursive formula:
 
 countAndSay(1) = "1"  
@@ -191,7 +203,7 @@ self: In Python, self is a reference to the instance of the class. When a method
 
 
 
-## 3) Longest Substring Without Repeating Characters
+### 3. Longest Substring Without Repeating Characters <a name="3"></a>
 
 Given a string s, find the length of the longest substring without repeating characters.
 
@@ -301,7 +313,7 @@ Update the current index of the character in mp to j + 1 (the next index).
 
 
 
-**56. Merge Intervals**
+### 56. Merge Intervals <a name="56"></a>
 Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.
 
 Example 1:
@@ -343,3 +355,63 @@ class Solution:
         return result
 ```
  
+### 2610. Convert an array into 2D array with conditions <a name="2610"></a>
+
+You are given an integer array nums. You need to create a 2D array from nums satisfying the following conditions:
+
+The 2D array should contain only the elements of the array nums.
+Each row in the 2D array contains distinct integers.
+The number of rows in the 2D array should be minimal.
+Return the resulting array. If there are multiple answers, return any of them.
+
+Note that the 2D array can have a different number of elements on each row.
+
+ 
+
+Example 1:
+
+Input: nums = [1,3,4,1,2,3,1]  
+Output: [[1,3,4,2],[1,3],[1]]  
+Explanation: We can create a 2D array that contains the following rows:  
+- 1,3,4,2  
+- 1,3  
+- 1  
+All elements of nums were used, and each row of the 2D array contains distinct integers, so it is a valid answer.
+It can be shown that we cannot have less than 3 rows in a valid array.
+Example 2:
+
+Input: nums = [1,2,3,4]  
+Output: [[4,3,2,1]]  
+Explanation: All elements of the array are distinct, so we can keep all of them in the first row of the 2D array.   
+
+
+```python3
+class Solution:
+    def findMatrix(self, nums: List[int]) -> List[List[int]]:
+        # Initialize an empty list to store the result
+        ans = []
+
+        # Iterate through each element in the input list 'nums'
+        for num in nums:
+            # Flag to keep track of whether the current 'num' is added to any existing row
+            added = False
+
+            # Iterate through existing rows in 'ans'
+            for row in ans:
+                # Check if the current 'num' is not already present in the current 'row'
+                if num not in row:
+                    # If 'num' is not in 'row', append 'num' to 'row'
+                    row.append(num)
+                    # Set 'added' to True to indicate that 'num' has been added
+                    added = True
+                    # Break out of the inner loop since 'num' has been added to a row
+                    break
+
+            # Check if 'added' is still False after iterating through all rows
+            if not added:
+                # If 'added' is False, create a new row containing only the current 'num'
+                ans.append([num])
+
+        # Return the final result
+        return ans
+```

@@ -1,10 +1,10 @@
 ## Table of Contents
-1. [2038. Remove colored pieces if both neighbors are the same color](#2038)
-2. [1529. Minimum Suffix Flips](#1529)
-3. [38. Count and Say](#38)
-4. [3.Longest Substring Without Repeating Characters](#3)
-5. [56. Merge Intervals](#56)
-6. [2610. Convert an array into 2D array with conditions](#2610)
+- [2038. Remove colored pieces if both neighbors are the same color](#2038)
+- [1529. Minimum Suffix Flips](#1529)
+- [38. Count and Say](#38)
+- [3.Longest Substring Without Repeating Characters](#3)
+- [56. Merge Intervals](#56)
+- [2610. Convert an array into 2D array with conditions](#2610)
 
 
 

@@ -167,6 +167,13 @@ print(index)
 
 # Output: 1
 ```
+**check whether the list is empty**
+
+In Python, the not keyword is a logical operator that is used to negate a boolean expression. When used with a list, it checks whether the list is empty. Here's how it works:
+
+    If the list is empty, not list evaluates to True.
+    If the list is not empty, not list evaluates to False.
+
 ## 7) Set
 Sets in Python are unordered collections of unique elements.
 

@@ -45,3 +45,32 @@ Explanation: The code simulates the marathon by iterating through the given roun
 In a simulation approach, you are essentially mimicking the process or scenario to gather information or results. The code takes into account the circular nature of the track and updates the visit counts based on the specified rounds. It does not require any advanced mathematical or optimization techniques, making it suitable for a straightforward simulation.
 
 The time complexity of the solution is O(m * n), where m is the length of the rounds array and n is the number of sectors. In the worst case, each sector may be visited in every round. If your input values are within a reasonable range, this simulation approach should work well. If you are dealing with very large inputs, you might need to explore more optimized algorithms.
+
+
+## 867. Transpose Matrix
+
+
+Given a 2D integer array matrix, return the transpose of matrix.
+
+The transpose of a matrix is the matrix flipped over its main diagonal, switching the matrix's row and column indices.
+
+Example 1:
+
+Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]  
+Output: [[1,4,7],[2,5,8],[3,6,9]]  
+Example 2:
+
+Input: matrix = [[1,2,3],[4,5,6]]  
+Output: [[1,4],[2,5],[3,6]]  
+
+```python3
+class Solution:
+    def transpose(self, matrix: List[List[int]]) -> List[List[int]]:
+        num_rows = len(matrix)
+        num_cols = len(matrix[0])
+        ans = [[0]*num_rows for _ in range(num_cols)]
+        for r, row in enumerate(matrix):
+            for c, val in enumerate(row):
+                ans[c][r] = val
+        return ans
+```

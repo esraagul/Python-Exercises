@@ -8,6 +8,7 @@
 - [647. Palindromic Substring](#647)
 - [5. Longest Palindromic Substring](#5)
 - [1177. Can Make Palindrome from Substring](#1177)
+- [227. Basic Calculator II](#227)
 
 
 
@@ -559,3 +560,76 @@ class Solution:
         return res
 ```
 
+
+### 227. Basic Calculator II<a name="227"></a>
+
+Given a string s which represents an expression, evaluate this expression and return its value. 
+
+The integer division should truncate toward zero.
+
+You may assume that the given expression is always valid. All intermediate results will be in the range of [-231, 231 - 1].
+
+Note: You are not allowed to use any built-in function which evaluates strings as mathematical expressions, such as eval().
+
+ 
+
+Example 1:
+
+Input: s = "3+2*2"
+Output: 7  
+Example 2:  
+
+Input: s = " 3/2 "  
+Output: 1  
+Example 3:  
+
+Input: s = " 3+5 / 2 "  
+Output: 5  
+ 
+
+Constraints:
+
+1 <= s.length <= 3 * 105  
+s consists of integers and operators ('+', '-', '*', '/') separated by some number of spaces.  
+s represents a valid expression.  
+All the integers in the expression are non-negative integers in the range [0, 231 - 1].  
+The answer is guaranteed to fit in a 32-bit integer.   
+
+
+```python3
+class Solution:
+    def calculate(self, s: str) -> int:
+        stack = []
+        curr_num = 0
+        prev_operator = "+"  # since all integers are non-negative, start with +.
+        s = s.replace(" ", "")  #remove empty chars.
+
+        for i in range(len(s)):
+            curr_str = s[i]
+
+            if curr_str.isdigit():
+                curr_num = curr_num * 10 + int(curr_str)
+
+            if not curr_str.isdigit() or i == (len(s) - 1):
+                if prev_operator == "+":
+                    stack.append(curr_num)
+                elif prev_operator == "-":
+                    stack.append(-curr_num)
+                elif prev_operator == "*": 
+                    prev_num = stack.pop()
+                    res = prev_num * curr_num
+                    stack.append(res)
+                elif prev_operator == "/":
+                    prev_num = stack.pop()
+                    res = int(prev_num / curr_num)
+                    stack.append(res)
+
+                prev_operator = curr_str #first update the number then operation.
+                curr_num = 0
+
+        ans = 0
+        while stack:
+            ans += stack.pop() 
+        return ans
+```
+        

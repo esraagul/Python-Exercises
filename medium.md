@@ -541,7 +541,7 @@ class Solution:
 
         for i, char in enumerate(s):
             count = prefix_sum[-1][:] #copy the prev prefix sum to update.
-            count[ord(char) - ord('a')] += 1
+            count[ord(char) - ord('a')] += 1 #if char = b then count[ord('b) - ord('a')] = count[1] that is updating the second position.
             prefix_sum.append(count)
 
         for q in queries:

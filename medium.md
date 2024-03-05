@@ -450,7 +450,7 @@ class Solution:
                 count += 1
                 l -= 1
                 r += 1
-        # even length palindromes: counting aa and aa in aaab, expand to the right.
+        # even length palindromes: counting aa and aa in aaab, right pointer is i+1.
         for i in range(len(s)):
             l = i
             r = i+1

@@ -5,6 +5,7 @@
 - [3.Longest Substring Without Repeating Characters](#3)
 - [56. Merge Intervals](#56)
 - [2610. Convert an array into 2D array with conditions](#2610)
+- [647. Palindromic Substring](#647)
 
 
 
@@ -415,3 +416,53 @@ class Solution:
         # Return the final result
         return ans
 ```
+
+### 647. Palindromic Substring <a name="647"></a>
+
+Given a string s, return the number of palindromic substrings in it.
+
+A string is a palindrome when it reads the same backward as forward.
+
+A substring is a contiguous sequence of characters within the string.
+
+ 
+
+Example 1:
+
+Input: s = "abc"  
+Output: 3  
+Explanation: Three palindromic strings: "a", "b", "c".  
+Example 2:
+
+Input: s = "aaa"  
+Output: 6  
+Explanation: Six palindromic strings: "a", "a", "a", "aa", "aa", "aaa".  
+
+
+```python3
+class Solution:
+    def countSubstrings(self, s: str) -> int:
+        count = 0
+        # odd length palindromes: char is in the middle, expand left and right.
+        for i in range(len(s)):
+            r = l = i
+            while l>=0 and r<len(s) and s[l]==s[r]:
+                count += 1
+                l -= 1
+                r += 1
+        # even length palindromes: counting aa and aa in aaab, expand to the right.
+        for i in range(len(s)):
+            l = i
+            r = i+1
+            while l>=0 and r<len(s) and s[l]==s[r]:
+                count += 1
+                l -= 1
+                r += 1
+        return count
+```
+        
+
+
+
+
+

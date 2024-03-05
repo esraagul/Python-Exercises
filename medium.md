@@ -7,6 +7,7 @@
 - [2610. Convert an array into 2D array with conditions](#2610)
 - [647. Palindromic Substring](#647)
 - [5. Longest Palindromic Substring](#5)
+- [1177. Can Make Palindrome from Substring](#1177)
 
 
 
@@ -504,5 +505,57 @@ class Solution:
 
 ```
 
+### 1177. Can make palindrome from Substring <a name="1177"></a>
 
+You are given a string s and array queries where queries[i] = [lefti, righti, ki]. We may rearrange the substring s[lefti...righti] for each query and then choose up to ki of them to replace with any lowercase English letter.
+
+If the substring is possible to be a palindrome string after the operations above, the result of the query is true. Otherwise, the result is false.
+
+Return a boolean array answer where answer[i] is the result of the ith query queries[i].
+
+Note that each letter is counted individually for replacement, so if, for example s[lefti...righti] = "aaa", and ki = 2, we can only replace two of the letters. Also, note that no query modifies the initial string s.
+
+ 
+
+Example :
+
+Input: s = "abcda", queries = [[3,3,0],[1,2,0],[0,3,1],[0,3,2],[0,4,1]]  
+Output: [true,false,false,true,true]  
+Explanation:  
+queries[0]: substring = "d", is palidrome.  
+queries[1]: substring = "bc", is not palidrome.  
+queries[2]: substring = "abcd", is not palidrome after replacing only 1 character.  
+queries[3]: substring = "abcd", could be changed to "abba" which is palidrome. Also this can be changed to "baab" first rearrange it "bacd" then replace "cd" with "ab".  
+queries[4]: substring = "abcda", could be changed to "abcba" which is palidrome.  
+Example 2:
+
+Input: s = "lyb", queries = [[0,1,0],[2,2,1]]  
+Output: [false,true]  
+
+
+```python3
+class Solution:
+    def canMakePaliQueries(self, s: str, queries: List[List[int]]) -> List[bool]:
+        res = []
+        prefix_sum = [[0] * 26]
+
+        for i, char in enumerate(s):
+            count = prefix_sum[-1][:] #copy the prev prefix sum to update.
+            count[ord(char) - ord('a')] += 1
+            prefix_sum.append(count)
+
+        for q in queries:
+            left, right, k = q[0], q[1], q[2]
+
+            # Calculate the number of characters with odd frequencies in the substring
+            odd_count = sum((prefix_sum[right + 1][i] - prefix_sum[left][i]) % 2 != 0 for i in range(26))
+
+            # Calculate the number of replacements needed to make the substring a palindrome
+            replacements_needed = odd_count // 2
+
+            # Check if it's possible to make the substring a palindrome with the given ki
+            res.append(replacements_needed <= k)
+
+        return res
+```
 
